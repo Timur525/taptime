@@ -1,0 +1,16 @@
+.main{
+    min-height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 120px;
+}
+.title{
+    max-width: 655px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 133%;
+    letter-spacing: -1px;
+    color: #606F7A;
+    margin-bottom: 80px;
+}

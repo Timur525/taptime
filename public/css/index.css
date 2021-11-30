@@ -1,0 +1,16 @@
+.root{
+    
+}
+/* .root::before{
+    content: '';
+    position: absolute;
+    height: 700px;
+    width: 1374px;
+    background-image: url(../img/background.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -10px;
+    right: -130px;
+    z-index: 0;
+} */

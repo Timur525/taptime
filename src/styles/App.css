@@ -1,0 +1,24 @@
+.App{
+    position: relative;
+    z-index: 1;
+    background-color: #EFF3F9;
+    min-height: 100vh;
+}
+.container{
+    max-width: 1290px;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background: #BDCBE0;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track{
+    background: rgba(140, 140, 140, 0.15);
+    border-radius: 50px;
+}

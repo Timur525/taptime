@@ -1,0 +1,17 @@
+.menu_icon{
+    border: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url(../../../img/icons/menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-color: transparent;
+    z-index: 2;
+    transition: background-image .2s ease 0s;
+}
+.menu_icon.active{
+    background-image: url(../../../img/icons/close.svg);
+}

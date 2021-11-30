@@ -1,0 +1,21 @@
+.calc{
+    max-width: 500px;
+    width: 100%;
+}
+.title{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 133%;
+    letter-spacing: -1px;
+    color: #606F7A;
+    margin-bottom: 42px;
+}
+.text{
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    color: #606F7A;
+    text-align: center;
+    margin-top: 210px;
+}
