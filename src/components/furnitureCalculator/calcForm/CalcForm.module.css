@@ -63,3 +63,31 @@ height: 55px;
 .btn:first-child{
     margin-right: 9px;
 }
+@media (max-width: 1200px) {
+    .product_img{
+        border-radius: 3px;
+        width: 140px;
+        height: 88px;
+        background-color: #fff;
+    }
+    .product{
+        background-color: transparent;
+    }
+    .input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .input:last-child{
+        margin-bottom: 27px;
+    }
+    .btn_wrapper{
+        flex-direction: column;
+    }
+    .btn{
+        width: 100%;
+    }
+    .btn:first-child{
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}

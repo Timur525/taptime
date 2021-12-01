@@ -7,6 +7,7 @@ const Counter = () => {
 
     const dispatch = useDispatch();
     const count = useSelector(state => state.counter)
+    const resize = useSelector(state => state.resize)
 
     const increment = () => {
         let payload = count + 1

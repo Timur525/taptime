@@ -6,6 +6,7 @@
     margin-bottom: 4px;
     overflow: hidden;
     min-height: 100px;
+    align-items: center;
 }
 .product:last-child{
     margin-bottom: 0;
@@ -36,4 +37,27 @@
     flex: 0 0 135px;
     height: 45px;
     margin-right: 27px;
+}
+@media (max-width: 1200px){
+    .product{
+        min-height: 60px;
+        border-color: transparent;
+    }
+    .img{
+        flex: 0 0 69px;
+        height: 48px;
+        border-right: none;
+    }
+    .text{
+        padding: 10px 22px;
+        font-size: 12px;
+        line-height: 100%;
+    }
+    .btn{
+        flex: 0 0 68px;
+        height: 30px;
+        margin-right: 20px;
+        font-size: 10px;
+        line-height: 100%;
+    }
 }

@@ -8,31 +8,33 @@ const defaultState = {
   counter: 0,
   productName: '',
   key: '',
+  page: true,
   bool: false,
   search: '',
+  resize: false,
   furnitureList: [
     {
         img: './img/product.jpg',
         text: 'Диван-кровать, раскладывается'
     },
     {
-        img: './img/product.jpg',
+        img: '/img/product.jpg',
         text: 'Стол, удобный и красивый'
     },
     {
-        img: '/src/img/product.jpg',
+        img: '/img/product.jpg',
         text: 'Стул, 1111 на нем можно всё'
     },
     {
-        img: './img/product.jpg',
+        img: '/img/product.jpg',
         text: 'Диван-кровать, раскладывается'
     },
     {
-        img: './img/product.jpg',
+        img: '/img/product.jpg',
         text: 'Стол, удобный и красивый'
     },
     {
-        img: '/src/img/product.jpg',
+        img: '/img/product.jpg',
         text: 'Стул, на нем можно всё'
     }
   ]
@@ -54,8 +56,12 @@ const reduser = (state = defaultState, action) => {
       return {...state, key: action.payload, bool: true}
     case "PRODUCT":
       return {...state, productName: action.payload}
-      case "SEARCH":
+    case "SEARCH":
       return {...state, search: action.payload}
+    case "RESIZE":
+      return {...state, resize: action.payload}
+    case "PAGE":
+      return {...state, page: action.payload}
     default:
       return state;
   }

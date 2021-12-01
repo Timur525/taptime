@@ -3,3 +3,8 @@
     justify-content: space-between;
     padding: 70px 0;
 }
+@media (max-width: 1200px){
+    .furnitureSelection{
+        padding: 0;
+    }
+}

@@ -15,6 +15,7 @@ const CalcForm = ( {filterProduct} ) => {
     const key = useSelector(state => state.key);
     const furnitureList = useSelector(state => state.furnitureList);
     const productName = useSelector(state => state.productName);
+    const resize = useSelector(state => state.resize);
 
     const clear = event => {
         event.preventDefault();
@@ -33,6 +34,12 @@ const CalcForm = ( {filterProduct} ) => {
     
     return (
         <div>
+            {
+                !resize &&
+                <button onClick={event => dispatch({type: 'PAGE', payload: true})}>
+                    Вернуться
+                </button>
+            }
             <div className={classes.product}>
                 <div className={classes.product_img}>
                     <img src={product} alt={productName} />

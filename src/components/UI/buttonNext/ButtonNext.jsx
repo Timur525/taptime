@@ -2,11 +2,13 @@ import React from 'react';
 import classes from './ButtonNext.module.css';
 import { Link } from 'react-router-dom';
 
-const ButtonNext = ({children}) => {
+const ButtonNext = ({children, path, onClick}) => {
     return (
         <Link 
             className={classes.button} 
-            to="/furniture-selection">
+            to={path}
+            onClick={onClick}
+            >
             {children}
         </Link>  
             

@@ -15,7 +15,7 @@
     position: relative;
     z-index: 2;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
     .header{
         padding: 25px 0;
     }

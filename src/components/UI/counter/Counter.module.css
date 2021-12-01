@@ -65,3 +65,21 @@
     color: #606F7A;
     font-weight: 400;
 }
+@media (max-width:1200px) {
+    .title,
+    .increment,
+    .decrement{
+        display: none;
+    }
+    .result{
+        width: 100%;
+        text-align: left;
+        padding: 0 19px;
+    }
+    .result::placeholder{
+        color: #B7B7B7;
+    }
+    .wrapper{
+        margin-bottom: 10px;
+    }
+}

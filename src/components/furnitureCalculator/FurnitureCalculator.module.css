@@ -19,3 +19,12 @@
     text-align: center;
     margin-top: 210px;
 }
+@media (max-width:1200px) {
+    .calc{
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+}

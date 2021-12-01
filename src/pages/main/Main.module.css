@@ -14,3 +14,15 @@
     color: #606F7A;
     margin-bottom: 80px;
 }
+@media (max-width: 1200px) {
+    .title{
+        font-size: 31px;
+        line-height: 130%;
+        margin-bottom: 50px;
+    }
+    .main{
+        min-height: calc(100vh - 90px);
+        display: block;
+        padding-bottom: 40px;
+    }
+}

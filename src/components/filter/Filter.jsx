@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import ButtonNext from '../UI/buttonNext/ButtonNext';
 import Hint from '../UI/hint/Hint';
-import classes from './Filter.module.css'
+import classes from './Filter.module.css';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Filter = () => {
 
     const [value, setValue] = useState('');
+    const resize = useSelector(state => state.resize);
 
     return (
         <div className={classes.filter}>
@@ -43,10 +45,17 @@ const Filter = () => {
                 </div>
             </div>
             <div className={classes.btn_wrapper}>
-                <ButtonNext>
+                {resize
+                ?<ButtonNext path={'/furniture-selection'}>
                     <span className={classes.btn_text}>Далее</span>
                 </ButtonNext>
-                { value &&
+                :<ButtonNext path={'/furniture-selection'}>
+                    Выбрать мебель
+                </ButtonNext>
+                }
+                
+                
+                { value && resize &&
                 <div className={classes.hint_top}>
                     <Hint>
                         <span className={classes.hint}>
@@ -56,7 +65,7 @@ const Filter = () => {
                 </div>
             }
             </div>
-            { !value &&
+            { !value && resize &&
                 <div className={classes.hint_down}>
                     <Hint>
                         <span className={classes.hint}>

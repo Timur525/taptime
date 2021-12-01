@@ -2,14 +2,11 @@ import React from 'react';
 import classes from '../buttonNext/ButtonNext.module.css';
 
 
-const Button = ({onClick, children, gg}) => {
-
-    const rootClasses = [classes.button];
-
+const Button = ({onClick, children}) => {
     
     return (
         <button 
-            className={rootClasses.join(' ')}
+            className={classes.button}
             onClick={onClick}
         > 
             {children}
