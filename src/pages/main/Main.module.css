@@ -5,6 +5,12 @@
     justify-content: center;
     padding-bottom: 120px;
 }
+.body{
+    background-image: url(../../img/background.svg);
+    background-position: 30px 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .title{
     max-width: 655px;
     font-weight: 400;
@@ -24,5 +30,8 @@
         min-height: calc(100vh - 90px);
         display: block;
         padding-bottom: 40px;
+    }
+    .body{
+        background-image: none;
     }
 }

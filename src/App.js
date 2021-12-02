@@ -8,6 +8,7 @@ import FurnitureSelection from './pages/furnitureSelection/FurnitureSelection';
 import { useSelector, useDispatch } from 'react-redux';
 import FurnitureCalculator from './components/furnitureCalculator/FurnitureCalculator';
 import FurnitureList from './components/furnitureList/FurnitureList';
+import Results from './pages/results/Results';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/furniture-selection" element={<FurnitureSelection />} />
+                <Route path="/results" element={<Results />} />
             </Routes>
       </div>
     </BrowserRouter>

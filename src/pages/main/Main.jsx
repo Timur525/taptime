@@ -5,7 +5,7 @@ import Header from '../../components/header/Header';
 
 const Main = () => {
     return (
-        <div>
+        <div className={classes.body}>
             <Header />
             <div className="container">
                 <section className={classes.main}>

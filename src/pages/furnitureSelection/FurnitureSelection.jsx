@@ -19,7 +19,10 @@ const FurnitureSelection = () => {
     
 
     return (
-        <div>            
+        <div>         
+            {resize &&
+                <Header />
+            }   
             <div className="container">
 
         

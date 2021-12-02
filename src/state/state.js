@@ -1,18 +1,42 @@
 import {createStore} from 'redux';
 
 const defaultState = {
-  volume: '',
-  netWeight: '',
-  grossWeight: '',
-  cost: '',
-  counter: 0,
-  productName: '',
-  key: '',
-  page: true,
-  bool: false,
-  search: '',
-  resize: false,
-  furnitureList: [
+    whereFrom: '',
+    where: 'Владивосток',
+    currency: 'USD',
+    rate: '64,54 руб.',
+    volume: '',
+    netWeight: '',
+    grossWeight: '',
+    cost: '',
+    counter: 0,
+    productName: '',
+    key: '',
+    page: true,
+    bool: false,
+    search: '',
+    resize: false,
+    currencyOption: [
+        {
+            name: 'USD',
+            rate: '64,54 руб.'
+        },
+        {
+            name: 'CYN',
+            rate: '30,71 руб.'
+        },
+        {
+            name: 'RUB',
+            rate: '-----'
+        }
+    ],
+    city: [
+        'Владивосток',
+        'Омск',
+        'Москва',
+        'Хабаровск'
+    ],
+    furnitureList: [
     {
         img: './img/product.jpg',
         text: 'Диван-кровать, раскладывается'
@@ -42,6 +66,16 @@ const defaultState = {
 
 const reduser = (state = defaultState, action) => {
   switch (action.type) {
+    case "RATE":
+        return {...state, rate: action.payload}
+    case "WHERE_FROM":
+        return {...state, whereFrom: action.payload}
+    case "WHERE":
+        return {...state, where: action.payload}
+    case "CURRENCY":
+        return {...state, currency: action.payload}
+    case "RATE":
+        return {...state, rate: action.payload}
     case "COUNTER":
       return {...state, counter: action.payload}
     case "VOLUME":

@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './FurnitureList.module.css';
 import Search from '../search/Search';
 import ItemList from './itemList/ItemList';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../header/Header';
 import Menu from '../header/menu/Menu';
+import { Link } from 'react-router-dom';
+import Hint from '../UI/hint/Hint';
 
 const FurnitureList = ({filterProduct}) => {
 
+    const dispatch = useDispatch();
+
     const resize = useSelector(state => state.resize);
+    const search = useSelector(state => state.search);
+    const bool = useSelector(state => state.bool);
+
+    // const [furnitureItem, setFurnitureItem] = useState(true)
 
     return (
 
-        // Заменить
-        <div style={{width: '100%'}}>
+        <div className={classes.body}>
             {
             !resize&& 
-            <div>
+            <div className={classes.header}>
+                <Link to="../" className={classes.back}></Link>
+                <input 
+                    className={classes.search} 
+                    type="text" 
+                    placeholder="Поиск..." 
+                    value={search}
+                    onChange={event => dispatch({type: 'SEARCH', payload: event.target.value})} 
+                />
                 <Menu/>
             </div>      
             }
@@ -30,6 +45,11 @@ const FurnitureList = ({filterProduct}) => {
                     { resize &&
                         <div className={classes.search}>
                             <Search />
+                            {!bool &&
+                            <div className={classes.hint_item}>
+                                <Hint><span className={classes.hint}>Введите название мебели в строку поиска или выберите мебель из предложенного списка</span></Hint>
+                            </div>
+                            }
                         </div>            
                     }
                     <ItemList filterProduct={filterProduct}/>

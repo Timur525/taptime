@@ -5,6 +5,7 @@
     border-radius: 3px;
     max-width: 100%;
     margin-bottom: 24px;
+    position: relative;
 }
 .product_img{
     width: 108px;
@@ -55,6 +56,7 @@
 
 .btn_wrapper{
     display: flex;
+    position: relative;
 }
 .btn{
 width: 206px;
@@ -62,6 +64,66 @@ height: 55px;
 }
 .btn:first-child{
     margin-right: 9px;
+}
+.hint_form{
+    position: absolute;
+    top: 0;
+    width: 456px;
+}
+.hint{
+    display: flex;
+    align-items: center;
+}
+.hint_text{
+    padding-right: 50px;
+    position: relative;
+}
+.hint_form .hint_text:before{
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-image: url(../../../img/icons/arrow_blue.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+}
+.hint_btn{
+    max-width: 600px;
+    position: absolute;
+    left: -122%;
+    display: block;
+}
+.hint_btn .hint_text{
+    padding-right: 40px;
+    position: relative;
+    margin-left: 20px;
+}
+.hint_btn .hint_text:before{
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-image: url(../../../img/icons/arrow_blue.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+}
+.close{
+    background-color: transparent;
+    border: none;
+    height: 20px;
+    width: 20px;
+    background-image: url(../../../img/icons/close_red.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 @media (max-width: 1200px) {
     .product_img{

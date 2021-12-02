@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import ButtonNext from '../UI/buttonNext/ButtonNext';
 import Hint from '../UI/hint/Hint';
@@ -10,6 +10,29 @@ const Filter = () => {
     const [value, setValue] = useState('');
     const resize = useSelector(state => state.resize);
 
+    const dispatch = useDispatch();
+    const currencyOption = useSelector(state => state.currencyOption);
+    const state = useSelector(state => state);
+    const city = useSelector(state => state.city);
+    const where = useSelector(state => state.where);
+    const whereFrom = useSelector(state => state.whereFrom);
+    const rate = useSelector(state => state.rate);
+    const currency = useSelector(state => state.currency);
+
+    useMemo( () => {
+
+        const getItem = currencyOption.find(item => {
+            if (item.name === currency) {
+                return item
+            } 
+        });
+
+        dispatch({type: 'RATE', payload: getItem.rate});
+
+    }, [currency])
+        
+
+
     return (
         <div className={classes.filter}>
             <div className={classes.wrapper}>
@@ -19,29 +42,44 @@ const Filter = () => {
                         type="text" 
                         className={classes.input} 
                         id="whereFrom" 
-                        value={value} 
-                        onChange={event => setValue(event.target.value)}
+                        value={whereFrom} 
+                        onChange={event => dispatch({type: 'WHERE_FROM', payload: event.target.value})}
                     />
                 </div>
                 <div className={classes.item}>
                     <label className={classes.label} htmlFor="where">Куда</label>
-                    <select className={classes.select} id="where">
-                        <option value="Москва">Москва</option>
-                        <option value="Владивосток">Владивосток</option>
-                        <option value="Омск">Омск</option>
+                    <select 
+                        className={classes.select} 
+                        id="where"
+                        value={where}
+                        onChange={event => dispatch({type: 'WHERE', payload: event.target.value})}
+                    >
+                        {city.map( (item, index) => 
+                            <option value={item} key={index}>{item}</option>
+                        )}
                     </select>
                 </div>
                 <div className={classes.item}>
                 <label className={classes.label} htmlFor="currency">Валюта</label>
-                    <select className={classes.select} id="currency">
-                        <option value="USD">USD</option>
-                        <option value="CYN">CYN</option>
-                        <option value="RUB">RUB</option>
+                    <select 
+                        className={classes.select}
+                        id="currency" 
+                        value={currency}
+                        onChange={event => dispatch({type: 'CURRENCY', payload: event.target.value})}
+                    >
+                        {currencyOption.map( (item, index) => 
+                            <option value={item.name} key={index} >{item.name}</option>
+                        )}
                     </select>
                 </div>
                 <div className={classes.item}>
                 <label className={classes.label} htmlFor="course">Курс</label>
-                    <input type="text" className={classes.input} disabled value="64,54 руб."/>
+                    <input 
+                        type="text" 
+                        className={classes.input} 
+                        disabled 
+                        value={rate}
+                    />
                 </div>
             </div>
             <div className={classes.btn_wrapper}>
@@ -53,9 +91,8 @@ const Filter = () => {
                     Выбрать мебель
                 </ButtonNext>
                 }
-                
-                
-                { value && resize &&
+
+                { whereFrom && resize &&
                 <div className={classes.hint_top}>
                     <Hint>
                         <span className={classes.hint}>
@@ -65,7 +102,7 @@ const Filter = () => {
                 </div>
             }
             </div>
-            { !value && resize &&
+            { !whereFrom && resize &&
                 <div className={classes.hint_down}>
                     <Hint>
                         <span className={classes.hint}>

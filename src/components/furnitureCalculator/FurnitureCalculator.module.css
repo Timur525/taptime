@@ -27,4 +27,24 @@
         justify-content: center;
         padding-bottom: 40px;
     }
+    .body{
+        width: 100%;
+    }
+    .back{
+        background-image: url(../../img/icons/arrow-back.svg);
+        background-size: 29px;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        flex: 0 0 auto;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
+    }
 }

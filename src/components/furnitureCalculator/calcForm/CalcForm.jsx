@@ -3,7 +3,9 @@ import classes from './CalcForm.module.css';
 import product from '../../../img/product.jpg'
 import Counter from '../../UI/counter/Counter';
 import Button from '../../UI/button/Button';
+import ButtonNext from '../../UI/buttonNext/ButtonNext';
 import { useDispatch, useSelector } from 'react-redux';
+import Hint from '../../UI/hint/Hint';
 
 const CalcForm = ( {filterProduct} ) => {
 
@@ -16,6 +18,9 @@ const CalcForm = ( {filterProduct} ) => {
     const furnitureList = useSelector(state => state.furnitureList);
     const productName = useSelector(state => state.productName);
     const resize = useSelector(state => state.resize);
+
+    const [delHintForm, setDelHintForm] = useState(true);
+    const [delHintBtn, setDelHintBtn] = useState(true);
 
     const clear = event => {
         event.preventDefault();
@@ -34,19 +39,23 @@ const CalcForm = ( {filterProduct} ) => {
     
     return (
         <div>
-            {
-                !resize &&
-                <button onClick={event => dispatch({type: 'PAGE', payload: true})}>
-                    Вернуться
-                </button>
-            }
             <div className={classes.product}>
                 <div className={classes.product_img}>
                     <img src={product} alt={productName} />
                 </div>
-                    <p className={classes.product_text}>
-                        {productName}
-                    </p>
+                <p className={classes.product_text}>
+                    {productName}
+                </p>
+                {delHintForm && resize &&
+                    <div className={classes.hint_form}>
+                        <Hint>
+                            <span className={classes.hint}>
+                                <span className={classes.hint_text}>Теперь заполните поля для этого элемента</span> 
+                                <button className={classes.close} onClick={event => setDelHintForm(false)}></button>
+                            </span>
+                        </Hint>
+                    </div>
+                }
             </div>
                 <Counter />
                 <div className={classes.input_wrapper}>
@@ -80,17 +89,27 @@ const CalcForm = ( {filterProduct} ) => {
                     />
                 </div>
                 <div className={classes.btn_wrapper}>
+                    
                     <div className={classes.btn}>
                         <Button onClick={clear}>
                             Сбросить
                         </Button>
                     </div>
                     <div className={classes.btn}>
-                        <Button onClick={add}>
+                        <ButtonNext path='/results'>
                             Добавить
-                        </Button>
+                        </ButtonNext>
                     </div>
-                    
+                    {delHintBtn && resize &&
+                        <div className={classes.hint_btn}>
+                            <Hint>
+                                <span className={classes.hint}>
+                                    <button className={classes.close} onClick={event => setDelHintBtn(false)}></button>
+                                    <span className={classes.hint_text}>Здесь вы можете сбросить параметры и добавить элемент</span> 
+                                </span>
+                            </Hint>
+                        </div>
+                    }
                 </div>
         </div>
     )

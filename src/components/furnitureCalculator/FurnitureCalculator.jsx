@@ -2,7 +2,7 @@ import React from 'react';
 import CalcForm from './calcForm/CalcForm';
 import classes from './FurnitureCalculator.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import Header from '../header/Header';
+import Menu from '../header/menu/Menu';
 
 const FurnitureCalculator = ({filterProduct}) => {
 
@@ -13,12 +13,13 @@ const FurnitureCalculator = ({filterProduct}) => {
     const dispatch = useDispatch();
 
     return (
-
-        // Заменить
-        <div style={{width: '100%'}}> 
+        <div className={classes.body}> 
             {
-            !resize && 
-            <div>Новая шапка</div>      
+            !resize&& 
+            <div className={classes.header}>
+                <button className={classes.back} onClick={event => dispatch({type: 'PAGE', payload: true})}></button>
+                <Menu/>
+            </div>      
             }
             
                 <article className={classes.calc}>
