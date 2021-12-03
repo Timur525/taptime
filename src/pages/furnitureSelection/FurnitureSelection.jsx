@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import classes from './FurnitureSelection.module.css';
 import FurnitureCalculator from '../../components/furnitureCalculator/FurnitureCalculator';
 import FurnitureList from '../../components/furnitureList/FurnitureList';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import Header from '../../components/header/Header';
 
 const FurnitureSelection = () => {

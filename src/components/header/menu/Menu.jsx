@@ -15,7 +15,6 @@ const Menu = () => {
         document.body.style.overflow = "visible";
     }
 
-
     return (
         <div className={classes.menu}>
             <button className={menuIconClasses.join(' ')} onClick={ () => show?setShow(false):setShow(true)}>

@@ -4,12 +4,6 @@
     background-color: #EFF3F9;
     min-height: 100vh;
 }
-.container{
-    max-width: 1290px;
-    padding: 0 20px;
-    margin: 0 auto;
-    height: 100%;
-}
 
 ::-webkit-scrollbar {
     width: 4px;

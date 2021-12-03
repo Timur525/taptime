@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import classes from './CalcForm.module.css';
-import product from '../../../img/product.jpg'
 import Counter from '../../UI/counter/Counter';
 import Button from '../../UI/button/Button';
 import ButtonNext from '../../UI/buttonNext/ButtonNext';
 import { useDispatch, useSelector } from 'react-redux';
 import Hint from '../../UI/hint/Hint';
 
-const CalcForm = ( {filterProduct} ) => {
+const CalcForm = () => {
 
     const dispatch = useDispatch();
     const volume = useSelector(state => state.volume);
     const netWeight = useSelector(state => state.netWeight);
     const grossWeight = useSelector(state => state.grossWeight);
     const cost = useSelector(state => state.cost);
-    const key = useSelector(state => state.key);
-    const furnitureList = useSelector(state => state.furnitureList);
     const productName = useSelector(state => state.productName);
+    const productImg = useSelector(state => state.productImg);
     const resize = useSelector(state => state.resize);
 
     const [delHintForm, setDelHintForm] = useState(true);
@@ -31,17 +29,11 @@ const CalcForm = ( {filterProduct} ) => {
         dispatch({type: 'COST', payload: ''});
     }
 
-    const add = event => {
-        event.preventDefault();
-        
-    }
-
-    
     return (
         <div>
             <div className={classes.product}>
                 <div className={classes.product_img}>
-                    <img src={product} alt={productName} />
+                    <img src={productImg} alt={productName} />
                 </div>
                 <p className={classes.product_text}>
                     {productName}

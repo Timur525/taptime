@@ -15,6 +15,24 @@
     position: relative;
     z-index: 2;
 }
+.logo_wrapper{
+    display: flex;
+    align-items: center;
+}
+.options{
+    margin-left: 60px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: 0.2px;
+    color: #606F7A;
+    display: flex;
+    align-items: center;
+}
+.icon_arrow{
+    margin: 0 7px;
+}
 @media (max-width: 1200px) {
     .header{
         padding: 25px 0;

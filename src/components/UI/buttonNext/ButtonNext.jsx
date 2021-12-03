@@ -8,7 +8,7 @@ const ButtonNext = ({children, path, onClick}) => {
             className={classes.button} 
             to={path}
             onClick={onClick}
-            >
+        >
             {children}
         </Link>  
             

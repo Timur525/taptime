@@ -6,9 +6,8 @@ import Menu from '../header/menu/Menu';
 
 const FurnitureCalculator = ({filterProduct}) => {
 
-    const bool = useSelector(state => state.bool);
+    const viewForm = useSelector(state => state.viewForm);
     const resize = useSelector(state => state.resize);
-    const page = useSelector(state => state.resize);
 
     const dispatch = useDispatch();
 
@@ -31,7 +30,7 @@ const FurnitureCalculator = ({filterProduct}) => {
                     </h2>
                     }
                     
-                    {bool
+                    {viewForm
                         ?<CalcForm filterProduct={filterProduct}/>
                         :<p className={classes.text}>Вы не выбрали пока ни одного элемента.</p>
                     }  

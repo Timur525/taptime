@@ -1,18 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useMemo } from 'react';
 import ButtonNext from '../UI/buttonNext/ButtonNext';
 import Hint from '../UI/hint/Hint';
 import classes from './Filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Filter = () => {
-
-    const [value, setValue] = useState('');
     const resize = useSelector(state => state.resize);
 
     const dispatch = useDispatch();
     const currencyOption = useSelector(state => state.currencyOption);
-    const state = useSelector(state => state);
     const city = useSelector(state => state.city);
     const where = useSelector(state => state.where);
     const whereFrom = useSelector(state => state.whereFrom);
@@ -24,12 +20,13 @@ const Filter = () => {
         const getItem = currencyOption.find(item => {
             if (item.name === currency) {
                 return item
-            } 
+            }
+            return false
         });
 
         dispatch({type: 'RATE', payload: getItem.rate});
 
-    }, [currency])
+    }, [currency, currencyOption, dispatch])
         
 
 

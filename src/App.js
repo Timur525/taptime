@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './styles/style.css';
 import './styles/App.css';
-import Header from './components/header/Header';
 import Main from './pages/main/Main';
 import FurnitureSelection from './pages/furnitureSelection/FurnitureSelection';
-import { useSelector, useDispatch } from 'react-redux';
-import FurnitureCalculator from './components/furnitureCalculator/FurnitureCalculator';
-import FurnitureList from './components/furnitureList/FurnitureList';
+import { useDispatch } from 'react-redux';
 import Results from './pages/results/Results';
 
 function App() {
 
   const dispatch = useDispatch();
-  const resize = useSelector(state => state.resize);
 
   const resizeScreen = () => {
 
@@ -33,7 +29,7 @@ function App() {
 
   }
 
-  useEffect(resizeScreen, []);
+  useEffect(resizeScreen, [dispatch]);
 
   return (
     <BrowserRouter>
@@ -46,6 +42,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+} 
 
 export default App;
