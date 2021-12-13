@@ -150,3 +150,8 @@
     background-repeat: no-repeat;
     cursor: pointer;
 }
+@media (max-width: 1200px) {
+    .hint_bot{
+        display: none;
+    }
+}

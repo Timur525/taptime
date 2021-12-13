@@ -14,7 +14,7 @@ function App() {
   const resizeScreen = () => {
 
     const resize = () => {
-      if(window.innerWidth < 1200){
+      if(window.innerWidth < 767){
           dispatch({type: 'RESIZE', payload: false});
       } else {
           dispatch({type: 'RESIZE', payload: true})

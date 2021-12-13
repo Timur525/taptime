@@ -20,7 +20,7 @@
     color: #606F7A;
     margin-bottom: 80px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
     .title{
         font-size: 31px;
         line-height: 130%;

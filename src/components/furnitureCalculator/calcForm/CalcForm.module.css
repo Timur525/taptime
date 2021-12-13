@@ -126,7 +126,25 @@ height: 55px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1200px){
+    .hint_form,
+    .hint_btn{
+        display: none;
+    }
+    .input_wrapper{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+    }
+    .input{
+        margin: 0 5px 10px;
+        flex: 1 0 45%;
+    }
+    .btn_wrapper{
+        justify-content: center;
+    }
+}
+@media (max-width: 767px) {
     .product_img{
         border-radius: 3px;
         width: 140px;
@@ -138,7 +156,12 @@ height: 55px;
     }
     .input{
         width: 100%;
-        margin-bottom: 10px;
+        margin: 0 0 10px;
+        flex: none;
+    }
+    .input_wrapper{
+        flex-direction: column;
+        margin: 0;
     }
     .input:last-child{
         margin-bottom: 27px;

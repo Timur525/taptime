@@ -2,7 +2,7 @@
     height: 405px;
     overflow: auto;
 }
-@media (max-width: 1200px){
+@media (max-width: 767px){
     .itemList{
         height: 100%;
         margin: 0 -20px;

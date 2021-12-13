@@ -65,7 +65,7 @@
     color: #606F7A;
     font-weight: 400;
 }
-@media (max-width:1200px) {
+@media (max-width:767px) {
     .title,
     .increment,
     .decrement{

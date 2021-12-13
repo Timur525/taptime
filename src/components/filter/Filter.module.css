@@ -141,7 +141,7 @@ input:disabled{
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
 }
-@media (max-width: 1200px){
+@media (max-width: 767px){
     .filter{
         flex-direction: column;
         height: 100%;

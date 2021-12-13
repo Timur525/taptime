@@ -5,6 +5,12 @@
 }
 @media (max-width: 1200px){
     .furnitureSelection{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 767px){
+    .furnitureSelection{
         padding: 0;
     }
 }
