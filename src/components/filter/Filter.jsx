@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import ButtonNext from '../UI/buttonNext/ButtonNext';
 import Hint from '../UI/hint/Hint';
 import classes from './Filter.module.css';
@@ -28,7 +28,22 @@ const Filter = () => {
 
     }, [currency, currencyOption, dispatch])
         
+    const whereFromRef = useRef();
 
+    const check = (e) => {
+        if (e.target.value === '') {
+            e.target.style.border = '2px solid red'
+        } else {
+            e.target.style.border = '2px solid transparent'
+        }
+    }
+
+    const valid = (e) => {
+        if (!whereFrom) {
+            e.preventDefault();
+            whereFromRef.current.style.border = '2px solid red';
+        }
+    }
 
     return (
         <div className={classes.filter}>
@@ -40,6 +55,8 @@ const Filter = () => {
                         className={classes.input} 
                         id="whereFrom" 
                         value={whereFrom} 
+                        onBlur={e => check(e)}
+                        ref={whereFromRef}
                         onChange={event => dispatch({type: 'WHERE_FROM', payload: event.target.value})}
                     />
                 </div>
@@ -81,10 +98,10 @@ const Filter = () => {
             </div>
             <div className={classes.btn_wrapper}>
                 {resize
-                ?<ButtonNext path={'/furniture-selection'}>
+                ?<ButtonNext path={'/furniture-selection'} onClick={valid}>
                     <span className={classes.btn_text}>Далее</span>
                 </ButtonNext>
-                :<ButtonNext path={'/furniture-selection'}>
+                :<ButtonNext path={'/furniture-selection'} onClick={valid}>
                     Выбрать мебель
                 </ButtonNext>
                 }

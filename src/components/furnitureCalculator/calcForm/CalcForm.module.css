@@ -42,6 +42,7 @@
     line-height: 15px;
     letter-spacing: 0.2px;
     color: #606F7A;
+    border: 2px solid transparent;
 }
 .input:last-child{
     margin-bottom: 36px;

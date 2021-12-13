@@ -17,8 +17,11 @@ const Menu = () => {
 
     return (
         <div className={classes.menu}>
-            <button className={menuIconClasses.join(' ')} onClick={ () => show?setShow(false):setShow(true)}>
-            </button>
+            <button 
+                className={menuIconClasses.join(' ')} 
+                onClick={ () => show?setShow(false):setShow(true)}
+                aria-label="Меню"
+            ></button>
             {show &&
                 <MenuList />
             }

@@ -16,7 +16,11 @@ const FurnitureCalculator = ({filterProduct}) => {
             {
             !resize&& 
             <div className={classes.header}>
-                <button className={classes.back} onClick={event => dispatch({type: 'PAGE', payload: true})}></button>
+                <button 
+                className={classes.back} 
+                onClick={event => dispatch({type: 'PAGE', payload: true})}
+                aria-label="Вернуться"
+                ></button>
                 <Menu/>
             </div>      
             }

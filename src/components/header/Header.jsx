@@ -3,15 +3,10 @@ import logo from '../../img/icons/Logo.svg';
 import ButtonContact from '../UI/buttonContact/ButtonContact';
 import Menu from './menu/Menu';
 import classes from './Header.module.css';
-import { useSelector } from 'react-redux';
-import arrow from '../../img/icons/arrow_grey.svg'
+import Options from './options/Options';
 
 const Header = () => {
-
-    const where = useSelector(state => state.where);
-    const whereFrom = useSelector(state => state.whereFrom);
-    const currency = useSelector(state => state.currency);
-
+    
     return (
         <header className={classes.header}>
             <div className="container">
@@ -21,12 +16,7 @@ const Header = () => {
                             <img className={classes.logo} src={logo} alt="Логотип" />
                         </a>
                         {window.location.pathname === '/furniture-selection' &&
-
-                            <div className={classes.options}>
-                                   <span>{whereFrom}</span>
-                                   <img className={classes.icon_arrow} src={arrow} alt="" />
-                                   <span>{where}, {currency}</span> 
-                            </div>
+                            <Options />
                         }
                     </div>
                     <div className={classes.button_contact}>

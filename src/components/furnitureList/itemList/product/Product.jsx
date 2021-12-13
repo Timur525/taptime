@@ -13,11 +13,12 @@ const Product = (props) => {
         dispatch({type: 'PRODUCT_IMG', payload: props.item.img});
         dispatch({type: 'VIEW_FORM', payload: true});
         dispatch({type: 'PAGE', payload: false});
-        dispatch({type: 'COUNTER', payload: 0});
+        dispatch({type: 'COUNTER', payload: 1});
         dispatch({type: 'VOLUME', payload: ''});
         dispatch({type: 'NET_WEIGHT', payload: ''});
         dispatch({type: 'GROSS_WEIGHT', payload: ''});
         dispatch({type: 'COST', payload: ''});
+        props.setActiveButton(props.index);
     }
 
     return (
@@ -30,8 +31,11 @@ const Product = (props) => {
                     {props.text}
                 </p>
                 <div className={classes.btn}>
-                    <Button onClick={editState}>
-                        Выбрать
+                    <Button onClick={editState} active={props.active ? "active" : null}>
+                        {props.active
+                        ? 'Выбрано'
+                        : 'Выбрать'
+                        }
                     </Button>
                     
                 </div>

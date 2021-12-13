@@ -9,7 +9,7 @@ const defaultState = {
     netWeight: '',
     grossWeight: '',
     cost: '',
-    counter: 0,
+    counter: 1, 
     productName: '',
     productImg: '',
     page: true,

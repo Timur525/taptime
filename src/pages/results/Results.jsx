@@ -24,7 +24,7 @@ const Results = () => {
         dispatch({type: 'PRODUCT_IMG', payload: ''});
         dispatch({type: 'VIEW_FORM', payload: false});
         dispatch({type: 'PAGE', payload: true});
-        dispatch({type: 'COUNTER', payload: 0});
+        dispatch({type: 'COUNTER', payload: 1});
         dispatch({type: 'VOLUME', payload: ''});
         dispatch({type: 'NET_WEIGHT', payload: ''});
         dispatch({type: 'GROSS_WEIGHT', payload: ''});
