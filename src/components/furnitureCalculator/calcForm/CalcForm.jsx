@@ -106,8 +106,9 @@ const CalcForm = () => {
                         type="text"
                         value={volume}
                         ref={volumeRef}
+                        pattern="[0-9]*"
                         onBlur={e=>valid(e)}
-                        onChange={event => dispatch({type: 'VOLUME', payload: event.target.value})}
+                        onChange={event => event.target.validity.valid && dispatch({type: 'VOLUME', payload: event.target.value})}
                     />
                     <input 
                         className={classes.input} 
@@ -115,8 +116,9 @@ const CalcForm = () => {
                         type="text" 
                         value={netWeight}
                         ref={netWeightRef}
+                        pattern="[0-9]*"
                         onBlur={e=>valid(e)}
-                        onChange={event => dispatch({type: 'NET_WEIGHT', payload: event.target.value})}
+                        onChange={event => event.target.validity.valid && dispatch({type: 'NET_WEIGHT', payload: event.target.value})}
                     />
                     <input 
                         className={classes.input} 
@@ -124,8 +126,9 @@ const CalcForm = () => {
                         type="text" 
                         value={grossWeight}
                         ref={grossWeightRef}
+                        pattern="[0-9]*"
                         onBlur={e=>valid(e)}
-                        onChange={event => dispatch({type: 'GROSS_WEIGHT', payload: event.target.value})}
+                        onChange={event => event.target.validity.valid && dispatch({type: 'GROSS_WEIGHT', payload: event.target.value})}
                     />
                     <input 
                         className={classes.input} 
@@ -133,8 +136,9 @@ const CalcForm = () => {
                         type="text" 
                         value={cost}
                         ref={costRef}
+                        pattern="[0-9]*"
                         onBlur={e=>valid(e)}
-                        onChange={event => dispatch({type: 'COST', payload: event.target.value})}
+                        onChange={event => event.target.validity.valid && dispatch({type: 'COST', payload: event.target.value})}
                     />
                 </div>
                 <div className={classes.btn_wrapper}>
