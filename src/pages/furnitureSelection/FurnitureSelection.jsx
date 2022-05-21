@@ -16,7 +16,7 @@ const FurnitureSelection = () => {
 
     const resize = useSelector(state => state.resize);
     const page = useSelector(state => state.page);
-    
+    //Comment
    
     return (
         <div>         
