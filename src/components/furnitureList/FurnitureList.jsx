@@ -14,7 +14,7 @@ const FurnitureList = ({filterProduct}) => {
     const resize = useSelector(state => state.resize);
     const search = useSelector(state => state.search);
     const viewForm = useSelector(state => state.viewForm);
-
+   
     return (
 
         <div className={classes.body}>
